@@ -68,7 +68,6 @@ try:
         response = json.loads(response.data.decode("utf-8"))
 
         for item in response["items"]:
-            
             # 47987412 is the question_id of the implementation
             # I intend to use
             if item["is_answered"] and item["question_id"] == 47987412:
