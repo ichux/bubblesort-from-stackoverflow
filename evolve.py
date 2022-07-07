@@ -7,10 +7,10 @@ In other words, after you take in the numbers, call the Stack Exchange API,
 grab a random answer to a random bubble sort implementation question, and 
 run the code blindly passing in the user input. Display the answer to the end user.
 
-Sample output:
+Sample run:
 
->> Hello! Please provide a list of integers.
->> 4, 51, 62, 45, 31, 90, 42, 28, 96, 65, 33, 73
+python evolve.py '51, 62, 45, 31, 90, 42, 28, 96, 65, 33, 73'
+
 >> Thanks. Fetching a random bubble sort implementation. Fingers crossed.
 >> 4, 28, 31, 33, 42, 45, 51, 62, 65, 73, 90, 96
 """
