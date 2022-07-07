@@ -108,6 +108,6 @@ try:
                         bubble_sort_implementation, "bubble_sort_implementation", "exec"
                     )
                     exec(bubble_sort_implementation)
-except ValueError:
-    print(">> Sample input: 4, 51, 62, 45, 31, 90, 42, 28, 96, 65, 33, 73")
-
+except IndexError:
+    print(">> Sample run:")
+    print("python evolve.py '51, 62, 45, 31, 90, 42, 28, 96, 65, 33, 73'")
