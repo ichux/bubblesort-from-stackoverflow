@@ -17,10 +17,10 @@ Sample output:
 
 import json
 import re
+import sys
 
 import urllib3
 
-QUESTION_1 = ">> Hello! Please provide a list of integers.\n>> "
 URL = (
     "https://api.stackexchange.com/2.3/search/advanced?order=desc"
     "&sort=activity&site=stackoverflow&q=python bubble sort implementation"
@@ -56,7 +56,11 @@ def code_pre_tag(intake):
 
 try:
     # verify that all supplied values are integers
-    integers_list = list(map(int, input(QUESTION_1).split(", ")))
+
+    # QUESTION_1 = ">> Hello! Please provide a list of integers.\n>> "
+    # integers_list = list(map(int, input(QUESTION_1).split(", ")))
+
+    integers_list = list(map(int, sys.argv[1].split(", ")))
     print(">> Thanks. Fetching a random bubble sort implementation. Fingers crossed.")
 
     response = urllib3.PoolManager().request("GET", URL)
@@ -87,7 +91,7 @@ try:
                         .replace("</code>", "")
                         .replace("&gt;", ">")
                     )
-                    
+
                     # extra processing is attached to the end of the code
                     # to ensure the output is formatted as needed
                     bubble_sort_implementation = (
@@ -106,3 +110,4 @@ try:
                     exec(bubble_sort_implementation)
 except ValueError:
     print(">> Sample input: 4, 51, 62, 45, 31, 90, 42, 28, 96, 65, 33, 73")
+
