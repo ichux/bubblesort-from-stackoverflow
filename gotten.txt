@@ -1,0 +1,2 @@
+Filesystem     Type  Size  Used Avail Use% Mounted on
+/dev/nvme0n1p2 ext4  468G  254G  191G  58% /
